@@ -1,0 +1,15 @@
+int maxsum(node* root){
+    if(root == NULL){
+        return 0;
+    }
+    
+    int l_sum=0;
+    int r_sum=0;
+    
+    l_sum = maxsum(root -> left);
+    r_sum = maxsum(root -> right);
+    
+    int maxi = root->data + max(l_sum , r_sum);
+    return maxi;
+    
+}
